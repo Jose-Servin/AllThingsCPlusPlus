@@ -2,20 +2,21 @@
 
 #include <iostream>
 
-int main() {
+using std::cin;
+using std::cout; // using only these 3 defined standard namespace functions
+using std::endl;
 
-    /* Creating variable to store user input*/
-    int favorite_number; 
+int main()
+{
 
-    /* Prompt user to enter their favorite number */
-    std::cout << "Enter your favorite number from 1 to 100: ";
+    int number1;
+    int number2;
 
-    /* Capture user input */
-    std::cin >> favorite_number;
+    cout << "Enter two numbers from 1 - 100 seperated by a space: ";
 
-    /* Responde back to user */
-    std::cout << "Nice! That's my favorite number too! " <<std::endl;
-    std::cout << "No really! " << favorite_number << " is my favorite number! " <<std::endl;
+    cin >> number1 >> number2;
+
+    cout << "You entered " << number1 << " and " << number2 << endl;
 
     return 0;
 }
