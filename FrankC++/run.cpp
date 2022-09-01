@@ -7,23 +7,14 @@ using std::endl;
 int main()
 {
 
-    cout << "Welcome to Baker's Cleaning Service" << endl;
+    int test_scores[5] = {90, 85, 76, 93, 99};
 
-    cout << "\nEnter the number of rooms you want cleaned: ";
-    int number_of_rooms;
-    cin >> number_of_rooms;
+    cout << "The current value of the second elemenent in the test_scores array is: " << test_scores[1] << endl;
 
-    const double price_per_room = 30.0;
-    const double tax_rate = 0.06;
-    const int days_valid = 30;
+    cout << "Enter the new value of the second array element: ";
 
-    cout << "\nEstimate of Cleaning Service: " << endl;
-    cout << "Number of rooms: " << number_of_rooms << endl;
-    cout << "Price per room $" << price_per_room << endl;
-    cout << "Cost $" << price_per_room * number_of_rooms << endl;
-    cout << "Tax $" << price_per_room * number_of_rooms * tax_rate << endl;
-    cout << "==========================" << endl;
-    cout << "Total Estimate: $" << (price_per_room * number_of_rooms) + (price_per_room * number_of_rooms * tax_rate) << endl;
-    cout << "This estimate is valid for " << days_valid << " days" << endl;
+    cin >> test_scores[1];
+
+    cout << "The new value for test_scores[1] is now: " << test_scores[1] << endl;
     return 0;
 }
