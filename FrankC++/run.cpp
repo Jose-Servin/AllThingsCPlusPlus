@@ -4,31 +4,17 @@ using namespace std;
 
 int main()
 {
+    bool result = false;
 
-    vector<int> test_scores = {90, 86, 99, 79, 88};
+    result = (100 == 50 + 50);
 
-    cout << "Currently we have: " << test_scores.size() << " elements in our vector" << endl;
-    cout << test_scores.at(0) << endl;
-    cout << test_scores.at(1) << endl;
-    cout << test_scores.at(2) << endl;
-    cout << test_scores.at(3) << endl;
-    cout << test_scores.at(4) << endl;
+    cout << result << endl; // by default a bool returns either 0 or 1
 
-    cout << "Enter a new test score to add to our vector: " << endl;
+    cout << std::boolalpha; // this converts the bool value of 0 or 1 to false / true respectively
 
-    int score_to_add = 0;
-    cin >> score_to_add;
+    cout << result << endl; // now, we will get back the word "true" and not "1"
 
-    test_scores.push_back(score_to_add);
-
-    cout << "Now we have: " << test_scores.size() << " elements in our vector" << endl;
-
-    cout << test_scores.at(0) << endl;
-    cout << test_scores.at(1) << endl;
-    cout << test_scores.at(2) << endl;
-    cout << test_scores.at(3) << endl;
-    cout << test_scores.at(4) << endl;
-    cout << test_scores.at(5) << endl;
+    cout << std::noboolalpha; // this goes back to default behavior or printing 0 or 1
 
     return 0;
 }
