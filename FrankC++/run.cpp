@@ -4,17 +4,20 @@ using namespace std;
 
 int main()
 {
-    bool result = false;
+    int wind_speed = 0;
+    int temperature = 0;
+    bool wear_coat = false;
+    cout << std::boolalpha;
 
-    result = (100 == 50 + 50);
+    cout << "Enter the current temperature: " << endl;
+    cin >> temperature;
 
-    cout << result << endl; // by default a bool returns either 0 or 1
+    cout << "Enter the current wind speed in mph: " << endl;
+    cin >> wind_speed;
 
-    cout << std::boolalpha; // this converts the bool value of 0 or 1 to false / true respectively
+    wear_coat = (temperature <= 60 || wind_speed > 10);
 
-    cout << result << endl; // now, we will get back the word "true" and not "1"
-
-    cout << std::noboolalpha; // this goes back to default behavior or printing 0 or 1
+    cout << "Should you wear a coat today? " << wear_coat << endl;
 
     return 0;
 }
