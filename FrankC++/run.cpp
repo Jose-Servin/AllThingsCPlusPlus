@@ -4,20 +4,61 @@ using namespace std;
 
 int main()
 {
-    int wind_speed = 0;
-    int temperature = 0;
-    bool wear_coat = false;
-    cout << std::boolalpha;
+    int dollars = 100;
+    int quarters = 25;
+    int dimes = 10;
+    int nickle = 5;
+    int pennies = 1;
 
-    cout << "Enter the current temperature: " << endl;
-    cin >> temperature;
+    // take in change amount from user
+    cout << "Enter an amount in change: ";
+    int change_amount = 0;
+    cin >> change_amount;
 
-    cout << "Enter the current wind speed in mph: " << endl;
-    cin >> wind_speed;
+    // number of dollars to give back
+    int dollars_back = 0;
+    dollars_back = change_amount / dollars;
 
-    wear_coat = (temperature <= 60 || wind_speed > 10);
+    // find the remainder to continue program if 1 dollar is not enough
+    int remainder = 0;
+    remainder = change_amount % dollars;
 
-    cout << "Should you wear a coat today? " << wear_coat << endl;
+    cout << "Dollars: " << dollars_back << endl;
+    // cout << "Remainder: " << remainder << endl;
+
+    // quarters to give back
+    int quarters_back = 0;
+    quarters_back = remainder / 25;
+
+    // find the "new remainder" to continue program if quarters is not enough
+    remainder = remainder % 25;
+
+    cout << "Quarters: " << quarters_back << endl;
+    // cout << "Remainder: " << remainder << endl;
+
+    // dimes to give back
+    int dimes_back = 0;
+    dimes_back = remainder / 10;
+    remainder = remainder % 10;
+    cout << "Dimes: " << dimes_back << endl;
+    // cout << "Remainder: " << remainder << endl;
+
+    // nickles to give back
+    int nickles_back = 0;
+    nickles_back = remainder / 5;
+    remainder = remainder % 5;
+    cout << "Nickles: " << nickles_back << endl;
+    // cout << "Remainder: " << remainder << endl;
+
+    // pennies to give back
+
+    int pennies_back = 0;
+    pennies_back = remainder / 1;
+    remainder = remainder % 1;
+
+    cout << "Pennies: " << pennies_back << endl;
+    // adding this to check the final remainder is 0
+    cout << "Remainder: " << remainder << endl;
 
     return 0;
 }
