@@ -4,40 +4,30 @@ using namespace std;
 
 int main()
 {
-    int grade = 0;
-    const int min = 0;
-    const int max = 100;
+    char letter_grade = {};
+    cout << "Enter the letter grade you expect on the exam: " << endl;
+    cin >> letter_grade;
 
-    cout << "Enter your grade: " << endl;
-    cin >> grade;
+    switch (letter_grade)
+    {
+    case 'a':
+    case 'A':
+        cout << "You need a 90 or above for an A!" << endl;
+        break;
 
-    // first we check to see if the grade entered is inside the range of possible grades (between 0 and 100)
-    if (grade >= min && grade <= max)
-    {
-        if (grade < 60)
-        {
-            cout << "F" << endl;
-            cout << "Sorry, you will have to re-take the class. " << endl;
-        }
-        else if (grade >= 60 && grade < 70)
-        {
-            cout << "D" << endl;
-        }
-        else if (grade >= 70 && grade < 80)
-        {
-            cout << "C" << endl;
-        }
-        else if (grade >= 80 && grade < 90)
-        {
-            cout << "B" << endl;
-        }
-        else
-        {
-            cout << "A" << endl;
-        }
+    case 'b':
+    case 'B':
+        cout << "You need an 80- 89 for a B " << endl;
+        break;
+
+    case 'c':
+    case 'C':
+        cout << "You need a 70-79 for a C" << endl;
+        break;
+
+    default:
+        cout << "Sorry, not a valid grade" << endl;
     }
-    else
-    {
-        cout << grade << " is not between " << min << " and " << max << endl;
-    }
+
+    return 0;
 }
