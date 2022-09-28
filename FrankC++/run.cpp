@@ -1,33 +1,46 @@
 #include <iostream>
 #include <vector>
+#include <iomanip>
 using namespace std;
 
 int main()
 {
-    char letter_grade = {};
-    cout << "Enter the letter grade you expect on the exam: " << endl;
-    cin >> letter_grade;
+    int length = 0;
+    int width = 0;
+    int height = 0;
+    const int max_dimension = 10;
 
-    switch (letter_grade)
+    int volume = 0;
+    const double base_cost = 2.50;
+    double final_rate = 0;
+    double surcharge = 0;
+
+    cout << "Enter the length, width and height of your package: ";
+    cin >> length >> width >> height;
+
+    volume = length * width * height;
+
+    if (length <= max_dimension && width <= max_dimension && height <= max_dimension)
     {
-    case 'a':
-    case 'A':
-        cout << "You need a 90 or above for an A!" << endl;
-        break;
-
-    case 'b':
-    case 'B':
-        cout << "You need an 80- 89 for a B " << endl;
-        break;
-
-    case 'c':
-    case 'C':
-        cout << "You need a 70-79 for a C" << endl;
-        break;
-
-    default:
-        cout << "Sorry, not a valid grade" << endl;
+        if (volume > 100 && volume < 500)
+        {
+            surcharge = base_cost * .10;
+            final_rate = base_cost + surcharge;
+        }
+        else if (volume > 500)
+        {
+            surcharge = base_cost * .25;
+            final_rate = base_cost + surcharge;
+        }
+        else
+        {
+            final_rate = 2.50;
+        }
+        cout << fixed << setprecision(2);
+        cout << "Your final shipping rate is $" << final_rate << endl;
     }
-
-    return 0;
+    else
+    {
+        cout << "Sorry, one of your dimensions is greater than 10 inches, we cannot ship." << endl;
+    }
 }
