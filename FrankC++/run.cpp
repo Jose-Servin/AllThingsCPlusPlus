@@ -4,18 +4,23 @@ using namespace std;
 
 int main()
 {
-    int num1 = 0;
-    int num2 = 0;
 
-    cout << "Enter two numbers separated by a space: " << endl;
-    cin >> num1 >> num2;
-
-    if (num1 != num2)
+    int num = 0;
+    bool done = false;
+    while (!done)
     {
-        cout << "Largest: " << ((num1 > num2) ? num1 : num2) << endl;
-        cout << "Smallest: " << ((num1 < num2) ? num1 : num2) << endl;
+        cout << "Enter a number greater than 1 and less than 10: " << endl;
+        cin >> num;
+
+        if (num > 1 & num < 10)
+        {
+            cout << "Thanks! " << endl;
+            done = true;
+        }
+        else
+        {
+            cout << "Out of range...try again! " << endl;
+            // since we didn't set out done flag to true, the while loop continues
+        }
     }
-    else
-        (
-            cout << "The numbers are equal" << endl;
 }
