@@ -5,22 +5,38 @@ using namespace std;
 int main()
 {
 
-    int num = 0;
-    bool done = false;
-    while (!done)
-    {
-        cout << "Enter a number greater than 1 and less than 10: " << endl;
-        cin >> num;
+    // vector<int> test = {10, 20, 30, 40, 50, 110, 100};
 
-        if (num > 1 & num < 10)
-        {
-            cout << "Thanks! " << endl;
-            done = true;
-        }
-        else
-        {
-            cout << "Out of range...try again! " << endl;
-            // since we didn't set out done flag to true, the while loop continues
-        }
+    // int index = 0;
+    // int count = 0;
+    // bool flag = false;
+    // while (index < test.size() && !flag)
+    // {
+    //     if (test[index] == 99)
+    //     {
+    //         int count = -1;
+    //         flag = true;
+    //         count += 1;
+    //     }
+    //     else
+    //     {
+    //         count += 1;
+    //         ++index;
+    //     }
+    // }
+    // cout << count << endl;
+    vector<int> vec = {10, 20, 30, 40, 50, 99, 100};
+    int count{0};
+    int index{0}; // See the Q/A forum for more about size_t
+                  // size_t is an unsigned int
+                  // you can replace size_t with int or unsigned int and it will work fine
+
+    while (index < vec.size() && vec.at(index) != 99)
+    {
+        ++count;
+        ++index;
     }
+    cout << count << endl;
+
+    return 0;
 }
