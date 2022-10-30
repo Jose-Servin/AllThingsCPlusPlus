@@ -1,40 +1,27 @@
 #include <iostream>
 #include <cstdlib>
-#include <cmath>
 
 using namespace std;
 
 // Function Prototyping
-double fahrenheit_to_celsius(double fahrenheit);
-double fahrenheit_to_kelvin(double fahrenheit);
+double final_cost(double base_cost, double tax_rate = 0.06);
 
+double final_cost(double base_cost, double tax_rate)
+{
+    return base_cost += (base_cost * tax_rate);
+}
 int main()
 {
+    // because tax_rate is a default argument we don't have to supply it
+    double user_cost = 0;
+    cout << "Enter the item cost: " << endl;
+    cin >> user_cost;
 
-    int fahrenheit = 0;
-    cout << "Enter fahrenheit temp to convert: " << endl;
-    cin >> fahrenheit;
+    double final_price = final_cost(user_cost);
+    // Here we supply a different value for tax; so default value is not used
+    double final_price_10 = final_cost(user_cost, 0.10);
 
-    double celsius_temperature = fahrenheit_to_celsius(fahrenheit);
-    double kelvin_temperature = fahrenheit_to_kelvin(fahrenheit);
-
-    cout << "The fahrenheit temperature " << fahrenheit << " degrees is equivalent to " << celsius_temperature << " degrees celsius and " << kelvin_temperature << " degrees kelvin.";
-
+    cout << "Your final price with a 0.06 tax is $" << final_price << endl;
+    cout << "Your final price with a 0.10 tax is $" << final_price_10 << endl;
     return 0;
-}
-
-double fahrenheit_to_celsius(double fahrenheit)
-{
-
-    double celsius = (5.0 / 9.0) * (fahrenheit - 32);
-
-    return celsius;
-}
-
-double fahrenheit_to_kelvin(double fahrenheit)
-{
-
-    double kelvin = (5.0 / 9.0) * (fahrenheit - 32) + 273;
-
-    return kelvin;
 }
