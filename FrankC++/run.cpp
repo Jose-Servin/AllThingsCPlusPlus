@@ -1,27 +1,31 @@
 #include <iostream>
 #include <cstdlib>
+#include <vector>
 
 using namespace std;
 
 // Function Prototyping
-double final_cost(double base_cost, double tax_rate = 0.06);
-
-double final_cost(double base_cost, double tax_rate)
+void say_hello(char name)
 {
-    return base_cost += (base_cost * tax_rate);
+    cout << "This is implemented when the argument is a char. " << endl;
+    cout << "Hello " << name << endl;
+}
+
+void say_hello(string name)
+{
+    cout << "This is implemented when the argument is a string. " << endl;
+    cout << "Hello " << name << endl;
+}
+
+void say_hello(std::vector<string> v)
+{
+    cout << "This is implemented when the argument is a vector of names. " << endl;
+    for (string name : v)
+        cout << "Hello " << name << endl;
 }
 int main()
 {
-    // because tax_rate is a default argument we don't have to supply it
-    double user_cost = 0;
-    cout << "Enter the item cost: " << endl;
-    cin >> user_cost;
-
-    double final_price = final_cost(user_cost);
-    // Here we supply a different value for tax; so default value is not used
-    double final_price_10 = final_cost(user_cost, 0.10);
-
-    cout << "Your final price with a 0.06 tax is $" << final_price << endl;
-    cout << "Your final price with a 0.10 tax is $" << final_price_10 << endl;
+    vector<string> names = {"Baker", "Bella", "Luna"};
+    say_hello(names);
     return 0;
 }
